@@ -1,7 +1,6 @@
-# REVTEX 4.2 が使える latex テンプレート
+# 科研費 Latex を使うテンプレート
 
 ## 機能
-- REVTEX 4.2 のテンプレートを入れています
-- latex テンプレートです
+- [科研費Latex](https://osksn2.hep.sci.osaka-u.ac.jp/~taku/kakenhiLaTeX/)のテンプレートです
 - Visual Studio Code の開発コンテナ（devcontainer）に対応しています
 - 日本語がコンパイルできます
