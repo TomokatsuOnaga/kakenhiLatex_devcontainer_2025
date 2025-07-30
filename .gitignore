@@ -1,0 +1,53 @@
+# LaTeX intermediate and output files
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+*.fdb_latexmk
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+*.nav
+*.snm
+*.vrb
+*.tdo
+*.xdv
+*.dvi
+*.pdf
+!コメントPDF/*.pdf
+*Notes.bib
+
+# Editors
+*~
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# TeXstudio
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+
+# Mac OS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# LaTeX build folders
+_build/
+latex.out/
+main.synctex(busy)

@@ -1,0 +1,41 @@
+{
+  "name": "texlive", // コンテナの名前
+  "build": {
+    "dockerfile": "../Dockerfile"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {} // Git をインストール
+  },
+  "extensions": [
+    "James-Yu.latex-workshop", // LaTeX サポート
+    "donjayamanne.githistory", // Git 履歴の可視化
+    "ms-azuretools.vscode-docker", // Docker サポート
+    "github.vscode-github-actions", // GitHub Actions サポート
+    "GitHub.copilot", // GitHub Copilot
+    "GitHub.copilot-chat", // Copilot Chat
+    "GitHub.vscode-pull-request-github", // GitHub Pull Request サポート
+    "MS-CEINTL.vscode-language-pack-ja" // 日本語言語パック
+  ],
+  "settings": {
+    "latex-workshop.latex.autoBuild.run": "onSave", // 保存時に自動ビルド
+    "latex-workshop.view.pdf.viewer": "tab", // PDF ビューアをタブで表示
+    "latex-workshop.formatting.latex": "latexindent",
+    "latex-workshop.latex.recipes": [
+      {
+        "name": "latexmk 🔄", // LaTeXmk を使用したビルド
+        "tools": ["latexmk"]
+      }
+    ],
+    "latex-workshop.latex.tools": [
+      {
+        "name": "latexmk",
+        "command": "latexmk",
+        "args": []
+      }
+    ],
+    "terminal.integrated.defaultProfile.linux": "zsh" // デフォルトのシェルを zsh に設定
+  },
+  "onCreateCommand": "echo 'Setting up workspace...'", // コンテナ作成時の初期化コマンド
+  "postCreateCommand": "[ -f .devcontainer/scripts/setup.sh ] && bash .devcontainer/scripts/setup.sh", // スクリプトが存在する場合のみ実行
+  "remoteUser": "root" // コンテナ内のデフォルトユーザー
+}

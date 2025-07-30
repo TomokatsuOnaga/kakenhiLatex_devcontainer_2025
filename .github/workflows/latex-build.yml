@@ -1,0 +1,32 @@
+name: Build LaTeX using custom container
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/xu-cheng/texlive-full:latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build PDF using latexmkrc
+        run: latexmk
+
+      - name: Rename PDF with tag
+        run: |
+          TAG_NAME=${GITHUB_REF#refs/tags/}
+          mv main.pdf main-${TAG_NAME}.pdf
+
+      - name: Upload PDF to GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: main-*.pdf
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
