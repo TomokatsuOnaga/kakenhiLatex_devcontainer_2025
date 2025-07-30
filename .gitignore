@@ -51,3 +51,6 @@ desktop.ini
 _build/
 latex.out/
 main.synctex(busy)
+
+*.bb
+*.xbb
